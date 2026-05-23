@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="Disentangled 3D Gaussian Splatting: High Fidelity Relightable Volumetric Video through Geometry Appearance Decoupling">
+  <meta name="keywords" content="3D Gaussian Splatting, Volumetric Video, Relighting, Disentangled Representation">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Disentangled 3D Gaussian Splatting</title>
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">Disentangled 3D Gaussian Splatting</h1>
+            <h2 class="subtitle is-4 publication-title">High Fidelity Relightable Volumetric Video through Geometry Appearance Decoupling</h2>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="mailto:zhouyifeng.cs@gmail.com" target="_blank">Yifeng Zhou</a>,
+              </span>
+              <span class="author-block">
+                Chao Zhang,
+              </span>
+              <span class="author-block">
+                Shuheng Wang,
+              </span>
+              <span class="author-block">
+                Wenfa Li,
+              </span>
+              <span class="author-block">
+                Yi Xu,
+              </span>
+              <span class="author-block">
+                Degang Wang,
+              </span>
+              <span class="author-block">
+                Yuzhong Chen,
+              </span>
+              <span class="author-block">
+                Shaohui Jiao
+              </span>
+            </div>
+            <hr>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">ByteDance<br>SIGGRAPH Asia 2025 Technical Communications<br></span>
+            </div>
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF link -->
+                <span class="link-block">
+                  <a href="paper/Disentangled_3D_Gaussian_Splatting__High_Fidelity_Relightable_Volumetric_Video_through_Geometry_Appearance_Decoupling.pdf" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fas fa-file-pdf"></i>
+                  </span>
+                  <span>Paper</span>
+                </a>
+              </span>
+
+                <!-- Code link -->
+                <span class="link-block">
+                  <a href="" target="_blank"
+                  class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon">
+                    <i class="fab fa-github"></i>
+                  </span>
+                  <span>Code</span>
+                </a>
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- Teaser image-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/teaser.png" alt="Disentangled 3DGS Teaser"/>
+    </div>
+  </div>
+</section>
+<!-- End teaser -->
+
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Recent advances in novel view synthesis have been greatly accelerated by the efficient, photorealistic rendering capabilities of 3D Gaussian Splatting (3DGS), bringing volumetric video technology closer to practical adoption. However, to fully realize the capabilities of 3DGS-based volumetric video, enhancing its geometric fidelity and relighting performance remains a critical challenge. In this work, we demonstrate that a controlled disentanglement of geometry and appearance modeling in 3DGS mutually enhances both aspects, leading to optimized convergence. Motivated by this observation, we propose a novel disentangled 3DGS representation that introduces a disentangling factor to regulate the interaction between geometry and appearance. Combined with well-designed pruning and densification strategies, our method improves performance in both novel view synthesis and surface reconstruction. We incorporate normal and visibility as additional Gaussian attributes, optimized in a staged manner, enabling high-quality relighting through a deferred shading pipeline. Furthermore, we extend our framework to the temporal domain, incorporating customized optimization strategies to produce temporally stable volumetric videos with relighting capabilities. Extensive experiments on both custom and public datasets demonstrate that our approach achieves competitive results in rendering quality and geometric reconstruction compared to existing methods.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+<!-- Pipeline image-->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Pipeline</h2>
+    <div class="hero-body">
+      <img src="static/images/pipeline.png" alt="Disentangled 3DGS Pipeline"/>
+    </div>
+    <div class="content has-text-justified">
+      <p>
+        Overview of our disentangled 3DGS framework. We introduce separate opacity fields for geometry and appearance, accumulating them independently during splatting via a disentangling factor that regulates their interaction. Normal and visibility are incorporated as additional Gaussian attributes, optimized in a staged manner. A deferred shading pipeline enables high-quality relighting by decomposing environment lighting and Gaussian PBR attributes. The framework is extended to dynamic 4D scenes through deformation and refinement stages with temporal regularization, producing stable volumetric videos with relighting capabilities.
+      </p>
+    </div>
+  </div>
+</section>
+<!-- End pipeline -->
+
+
+<!-- Video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop content">
+      <h2 class="title is-3">Video</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <div class="publication-video">
+            <video controls autoplay muted loop playsinline>
+              <source src="static/images/video.mp4" type="video/mp4">
+            </video>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End video -->
+
+
+<!-- BibTex citation -->
+<section class="section hero is-light" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@inproceedings{10.1145/3757376.3771406,
+  author = {Zhou, Yifeng and Zhang, Chao and Wang, Shuheng and Li, Wenfa and Yi, Xu and Wang, Degang and Chen, Yuzhong and Jiao, Shaohui},
+  title = {Disentangled Gaussian Splatting: High-Fidelity Relightable Volumetric Video through Geometry-Appearance Decoupling},
+  year = {2025},
+  isbn = {9798400721366},
+  publisher = {Association for Computing Machinery},
+  address = {New York, NY, USA},
+  url = {https://doi.org/10.1145/3757376.3771406},
+  doi = {10.1145/3757376.3771406},
+  booktitle = {Proceedings of the SIGGRAPH Asia 2025 Technical Communications},
+  articleno = {27},
+  numpages = {4},
+  series = {SA Technical Communications '25}
+}</code></pre>
+  </div>
+</section>
+<!-- End BibTex citation -->
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
